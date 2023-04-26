@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { View, Text, StyleSheet, ScrollView } from "react-native"
 import RestaurantCard from "./RestaurantCard"
+import Random from "./Random"
 
 export default function RestaurantList({ navigation }) {
 
@@ -20,6 +21,7 @@ export default function RestaurantList({ navigation }) {
                 {foodList && foodList.map(food => (
                     <RestaurantCard food={food} key={food.id} navigation={navigation} />
                 ))}</ScrollView>
+            <Random navigation={navigation} foodList={foodList} />
         </View>
     )
 }
